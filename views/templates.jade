@@ -1,0 +1,16 @@
+
+// templates
+
+// nav list item content
+script( id='nav-item-template', type='text/x-handlebars-template' )
+	p
+		a(href="{{url}}" title="{{subtitle}}") {{title}}
+
+// demo list item content
+script( id='demo-template', type='text/x-handlebars-template' )
+	a(href="{{url}}") {{name}}<br>
+	p {{description}}
+
+// demo list item content
+script( id='model-3d-template', type='text/x-handlebars-template' )
+	#model-3d-container

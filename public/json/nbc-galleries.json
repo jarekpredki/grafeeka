@@ -1,0 +1,46 @@
+{
+	"galleries": [
+		{
+			"id": "1",
+			"name": "Stars Dazzle at the 69th Tony Awards",
+			"description": "The biggest names on Broadway came together at the 2015 Tony Awards to celebrate the talented both on and off the stage.",
+			"data": "/nbc-photos-api/gallery/1",
+			"url": "http://data.nbcnews.com/drone/getbyid?id=newscms/entry/371361&output=today&callback=cb",
+			"image": "http://media3.s-nbcnews.com/i/newscms/2015_24/1063981/ss-tony-awards7-jpo-151a_de291fdc8915459d5b64b9ae97be37ac.jpg",
+			"source": "AP",
+			"title": "Image: The cast of \"On the Town\" ",
+			"caption": "The cast of \"On the Town\" performs at the 69th annual Tony Awards at Radio City Music Hall on June 7.",
+			"credit": "Charles Sykes",
+			"width": "2500",
+			"height": "1675"
+		},
+		{
+			"id": "2",
+			"name": "Month in Space: These Pictures Will Put You in Orbit ... and Beyond",
+			"description": "Check out views from the International Space Station, a blue sunset on Mars and other out-of-this-world pictures from May 2015.",
+			"data": "/nbc-photos-api/gallery/2",
+			"url": "http://data.nbcnews.com/drone/getbyid?id=newscms/entry/367081&output=today&callback=cb",
+			"image": "http://media1.s-nbcnews.com/i/newscms/2015_22/1052591/ss-150530-misp-mn-03_b08a009af479fb1f6475bac348282ace.jpg",
+			"source": "NASA",
+			"title": "Image:",
+			"caption": "Earth is seen through the windows of the cupola on the International Space Station in an image tweeted by NASA astronaut Scott Kelly on May 14.",
+			"credit": "Scott Kelly",
+			"width": "2500",
+			"height": "1709"
+		},
+		{
+			"id": "3",
+			"name": "America's Fallen Honored Across Nation for Memorial Day",
+			"description": "Memorial Day parades and ceremonies took place around the nation to remember those who made the ultimate sacrifice defending the U.S.",
+			"data": "/nbc-photos-api/gallery/3",
+			"url": "http://data.nbcnews.com/drone/getbyid?id=newscms/entry/364286&output=today&callback=cb",
+			"image": "http://media3.s-nbcnews.com/i/newscms/2015_22/1041281/ss-150525-memorial-day-tease_01b0317dfad457b84e150eaf89b1021f.jpg",
+			"source": "AP",
+			"title": "Image:",
+			"caption": "Rocco Struncius salutes as soldiers walk by during a Memorial Day parade in the Glenwood neighborhood of New York on May 25. President Barack Obama saluted Americans who died in battle Monday, noting the first Memorial Day in 14 years without U.S. forces involved in a major ground war. ",
+			"credit": "Seth Wenig",
+			"width": "2500",
+			"height": "1769"
+		}
+	]
+}

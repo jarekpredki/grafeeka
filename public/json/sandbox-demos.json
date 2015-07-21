@@ -1,0 +1,88 @@
+{
+	"demos": [
+		{
+			"id": "1",
+			"name": "Sandbox: Shell Application (Sandbox)",
+			"description": "The 'Shell Application' is the first project I created for this sandbox. It's a shell application for the demos you are viewing. Within it are several demo apps, but the main application could be (and was) saved off and used to make new single app projects in the future. The web app you are viewing uses: Node, Express, Backbone, Handlebars and Jade.",
+			"url": "/"
+		},
+		{
+			"id": "2",
+			"name": "Resume of Jaroslaw Predki (Sandbox)",
+			"description": "The resume / portfolio demo is a remake of www.clearerimage.com/jarekpredki/ in NodeJS / Backbone.",
+			"url": "/jarekpredki"
+		},
+		{
+			"id": "3",
+			"name": "DEMO: Vertical Photo Gallery (Sandbox)",
+			"description": "This demo is a simple photo gallery, displaying a list of photos in vertical columns allowing the user to scroll through the whole list. Depending on the screen width, the view will responsively resize to 3, 2 or 1 column. Resizing the browser will also dynamically change the number of columns if the size changes below the 2 thresholds.",
+			"url": "/photogallery1"
+		},
+		{
+			"id": "4",
+			"name": "DEMO: Photo Thumbnails with Preview Pane (Sandbox)",
+			"description": "This demo is also a photo gallery, built by modyfying the previous gallery demo and adding the preview pane display. This demo uses two views that share a model: thumbnails and the preview pane.",
+			"url": "/photogallery2"
+		},
+		{
+			"id": "5",
+			"name": "DEMO: Photo Galleries (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. It mentions the creation of a page with the ability to view a list of galleries, a single gallery with all of its photos, and the ability to view a single photo. Users should also be able to navigate between galleries, and photos.",
+			"url": "/nbc-task"
+		},
+		{
+			"id": "6",
+			"name": "REST API: List of Demos (Sandbox)",
+			"description": "Returns a json document with a list of demos to show on the demos page.",
+			"url": "/demos-api"
+		},
+		{
+			"id": "7",
+			"name": "REST API: List of Photos (Sandbox)",
+			"description": "Returns a json document with a list of photos, their name, description, date and url.",
+			"url": "/photos-api"
+		},
+		{
+			"id": "8",
+			"name": "REST API: List of Sandbox Pages (Sandbox)",
+			"description": "Returns a json document with a list of pages to show on the sandbox nav.",
+			"url": "/pages-api/sandbox"
+		},
+		{
+			"id": "9",
+			"name": "REST API: List of Resume Pages (Sandbox)",
+			"description": "Returns a json document with a list of pages to show on the resume nav.",
+			"url": "/pages-api/resume"
+		},
+		{
+			"id": "10",
+			"name": "REST API: List of NBC Galleries (NBC Task)",
+			"description": "Returns a json document with a list of galleries, their name and url.",
+			"url": "/nbc-galleries-api"
+		},
+		{
+			"id": "11",
+			"name": "REST API: NBC Gallery Info (1) (NBC Task)",
+			"description": "Returns a json document with information about gallery with id: 1. Info comes from local galleries data.",
+			"url": "/nbc-galleries-api/info/1"
+		},
+		{
+			"id": "12",
+			"name": "REST API: NBC Gallery Data (1) (NBC Task)",
+			"description": "Returns a json document with a the entire gallery json for gallery with id: 1. Info comes from remote NBC source.",
+			"url": "/nbc-galleries-api/data/1"
+		},
+		{
+			"id": "13",
+			"name": "REST API: List of NBC Photos (1) (NBC Task)",
+			"description": "Returns a json document with a local gallery info.",
+			"url": "/nbc-photos-api/info/1"
+		},
+		{
+			"id": "14",
+			"name": "REST API: List of NBC Photos (1) (NBC Task)",
+			"description": "Returns a json document with a list of gallery photos, from remote data source.",
+			"url": "/nbc-photos-api/gallery/1"
+		}
+	]
+}

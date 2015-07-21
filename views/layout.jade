@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title= title
+		include ./head.jade
+		block head-content
+	body
+		include ./nav.jade
+		include ./header.jade
+
+		block body-content
+			#container
+				#content
+					.section#sandbox-home(style="text-align:left;")
+						h3 Welcome to my Sandbox of NodeJS app demos.
+						p.
+							This shell application is running on NodeJS, with Express.<br>
+							The front end of the application framework<br>
+							uses Backbone for MVC UI structuring, and for HTML templeting<br>
+							it uses Jade and Handlebars. Additional code was custom written<br>
+							to create a playground for myself to play with NodeJS apps.<br>
+
+						.backdrop(style="background-color:#fff;")
+				.backdrop(style="background-color:#fff;")
+
+		include ./footer.jade
+		include ./templates.jade

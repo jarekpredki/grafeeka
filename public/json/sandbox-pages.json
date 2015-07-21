@@ -1,0 +1,60 @@
+{
+	"nav": [
+		{
+			"id": "1",
+			"title": "NodeJS Sandbox",
+			"subtitle": "by Jaroslaw Predki",
+			"url": "/",
+			"route": "./routes/sandbox/sandbox"
+		},
+		{
+			"id": "2",
+			"title": "Information",
+			"subtitle": "Frameworks // Libraries // SDK's // API's",
+			"url": "/info",
+			"route": "./routes/sandbox/sandbox-info"
+		},
+		{
+			"id": "3",
+			"title": "Demos",
+			"subtitle": "Apps // Prototypes // Subsites / API's",
+			"url": "/demos",
+			"route": "./routes/sandbox/sandbox-demos"
+		},
+		{
+			"id": "4",
+			"title": "Journal",
+			"subtitle": "Notes // Ideas // Todo List // Wish List",
+			"url": "/journal",
+			"route": "./routes/sandbox/sandbox-journal"
+		},
+		{
+			"id": "5",
+			"title": "Resume",
+			"subtitle": "of Jaroslaw Predki",
+			"url": "/jarekpredki",
+			"route": "./routes/jarekpredki/jarekpredki"
+		},
+		{
+			"id": "6",
+			"title": "PG-1",
+			"subtitle": "",
+			"url": "/photogallery1",
+			"route": "./routes/photogallery/photogallery1"
+		},
+		{
+			"id": "7",
+			"title": "PG-2",
+			"subtitle": "",
+			"url": "/photogallery2",
+			"route": "./routes/photogallery/photogallery2"
+		},
+		{
+			"id": "8",
+			"title": "NBC Task",
+			"subtitle": "",
+			"url": "/nbc",
+			"route": "./routes/nbc"
+		}
+	]
+}

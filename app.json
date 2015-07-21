@@ -1,0 +1,7 @@
+{
+  "name": "Node.js Sandbox",
+  "description": "A sandbox Node.js app using Express 4, Jade, Handlebars, Backbone and jQuery.",
+  "repository": "https://github.com/jarekpredki/nodejs-sandbox",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "jade", "handlebars", "backbone", "jquery", "static"]
+}

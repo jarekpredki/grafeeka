@@ -1,0 +1,59 @@
+extends ../layout.jade
+
+block head-content
+	include ../sandbox.jade
+	script( type='text/javascript' src='http://threejs.org/build/three.min.js' )
+	script( type='text/javascript' src='/public/javascripts/sandbox/sandbox-journal.js' )
+
+block body-content
+	#container
+		#content
+			.section#sandbox-journal(style="text-align:left;")
+				h3 My Journal // Todo List
+				ul
+					li finish the resume make over into Node/Backbone.
+					li finish Flip Book demo. (Use Three.js for hard book covers and put soft flip pages between two 3d objects. :)
+					li finish Web Socket Chat demo. (Client + Server for chat; and explore a gaming messaging system (p2p?, mmo?))
+					li move the journal into a blog maybe? hmm..!
+					li add incremental dynamic loading into photo galleries (scroll based).
+					li.done <strong>done!</strong> - give landing page a visual make over. (Add bg, fonts, sizes, colors, etc.)
+					li.done <strong>done!</strong> - split landing page into a few sub pages. (info, demos, journal, etc.)
+					li.done <strong>done!</strong> - add shared header.
+					li.done <strong>done!</strong> - add shared footer.
+					li.done <strong>done!</strong> - add shared nav on child pages.
+					li.done <strong>done!</strong> - add nav json data path.
+
+				h3 Todo // Photo Gallery 1
+				ul
+					li add support for multiple galleries.
+					li fix on load boarders being visible and then images showing up (need on-loaded event handler to show image after it loads)
+
+				h3 Todo // Photo Gallery 2
+				ul
+					li add support for multiple galleries.
+					li make thumbnails and preveiw heights always match.
+					li fix horizonatal scroll bar (it's showing)
+
+				h3 Todo // WebGL & 3D
+				ul
+					li need to think of some 3d web apps to create, fun stuff.
+					li.done <strong>done!</strong> - add 3d capabilities with WebGL / Canvas.
+					li.done <strong>done!</strong> - integrate Three.js and get a 3d object spinning, rendering, etc.
+
+				h3 Todo // REST API
+				ul
+					li add 'one' api calls for photos -> /photos/:id and /photos/:name/
+					li add 'one' api calls for demos -> /demos/:id and /demos/:name/
+					li add 'incremental' api calls for photos -> /photos/:offset (will need for dynamic content loading)
+					li.done <strong>done!</strong> - add 'one' api calls for pages -> /pages/id/:id and /pages/url/:url
+
+				h3 My Journal // Wish List
+				ul
+					li add a Node friendly database.
+					li move all data to database, and change REST API to use the db and return json (instead of reading from file).
+					li finish Flip Book demo (need to design mvc pattern for book, pages, page, photo, (mask?) models).
+					li finish WebSockets Chat demo (note: python rebuild issue, hmm..).
+					li.done <strong>done!</strong> - add 3d rendering with Canvas or WebGL.
+
+				.backdrop(style="background-color:#fff;")
+		.backdrop(style="background-color:#fff;")

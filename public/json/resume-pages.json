@@ -1,0 +1,60 @@
+{
+	"nav": [
+		{
+			"id": "1",
+			"title": "Sandbox",
+			"subtitle": "Return to the Sandbox",
+			"url": "/",
+			"route": "./routes/sandbox/sandbox"
+		},
+		{
+			"id": "2",
+			"title": "Home",
+			"subtitle": "of Jaroslaw Predki",
+			"url": "/jarekpredki",
+			"route": "./routes/jarekpredki/jarekpredki"
+		},
+		{
+			"id": "4",
+			"title": "LFW",
+			"subtitle": "Game Development or Web Development",
+			"url": "/jarekpredki/lookingforwork",
+			"route": "./routes/jarekpredki/jarekpredki/lookingforwork"
+		},
+		{
+			"id": "5",
+			"title": "Skills",
+			"subtitle": "Programming Languages, Software Engineering, Applications",
+			"url": "/jarekpredki/skills",
+			"route": "./routes/jarekpredki/jarekpredki/skills"
+		},
+		{
+			"id": "6",
+			"title": "Education",
+			"subtitle": "University, Side Projects, Research & Self Studies",
+			"url": "/jarekpredki/education",
+			"route": "./routes/jarekpredki/jarekpredki/education"
+		},
+		{
+			"id": "7",
+			"title": "Experience",
+			"subtitle": "Work and Project History - Past, Present & Future",
+			"url": "/jarekpredki/history",
+			"route": "./routes/jarekpredki/jarekpredki/history"
+		},
+		{
+			"id": "8",
+			"title": "Gallery",
+			"subtitle": "Past Projects and Memorable Clients",
+			"url": "/jarekpredki/gallery",
+			"route": "./routes/jarekpredki/jarekpredki/gallery"
+		},
+		{
+			"id": "9",
+			"title": "Contact",
+			"subtitle": "Phone, E-Mail, Facebook, Google, Twitter",
+			"url": "/jarekpredki/contact",
+			"route": "./routes/jarekpredki/jarekpredki/contact"
+		}
+	]
+}

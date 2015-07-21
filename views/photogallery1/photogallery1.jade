@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title= title
+		link( rel='stylesheet' href='/public/stylesheets/style.css' )
+		script( type='text/javascript' src='/public/javascripts/lib/underscore-min.js' )
+		script( type='text/javascript' src='/public/javascripts/lib/jquery.min.js' )
+		script( type='text/javascript' src='/public/javascripts/lib/handlebars.js' )
+		script( type='text/javascript' src='/public/javascripts/lib/backbone-min.js' )
+		script( type='text/javascript' src='/public/javascripts/photogallery/photogallery1.js' )
+	body
+	#pg1-photos
+	#pg1-fullsize
+
+	script( id='photo-template', type='text/x-handlebars-template' )
+		<img id="photo-{{id}}" src="{{url}}" title="Click to view full size" />
+		p.
+			{{name}}<br>
+			{{date}}
+
+	script( id='photo-fullsize-template', type='text/x-handlebars-template' )
+		<img id="photo-fullsize-{{id}}" src="{{url}}" title="Click to close" />
+		p.
+			{{name}}<br>
+			{{date}}<br>
+			<br>
+			Copyright &#169; {{photographer}}
