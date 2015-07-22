@@ -29,15 +29,9 @@ var Sandbox					= Class.extend({
 		previous:			0
 	},
 
-	// webGL stuff
-	three: {
-		camera:				null,
-		scene:				null,
-		renderer:			null,
-		mesh:				null
-	},
-
 	//--------------------------------------------------------------------------
+	// @info		Creates and initializes a sandbox app, and calls init methods to
+	//				set up settings and ititial display. Holds page and demo lists.
 	//--------------------------------------------------------------------------
 	create: function( settings ) {
 		// read settings and initialize
@@ -61,6 +55,7 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Initialize settings by overwriting passed in data.
 	//--------------------------------------------------------------------------
 	initSettings: function( settings ) {
 		if ( typeof( settings ) != 'undefined' ) {
@@ -92,9 +87,10 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Initialize the page. Set any data as needed.
 	//--------------------------------------------------------------------------
 	initPage: function( settings ) {
-		// over ride page info
+		// overwrite page info
 		if ( window.location && window.location.pathname ) {
 			var page				= this.pageList.where({ url: window.location.pathname })[0];
 			if ( page && page.attributes ) {
@@ -143,6 +139,7 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Resize event handler. If needed, updates display.
 	//--------------------------------------------------------------------------
 	resize: function( event ) {
 		//console.log( 'resize' );
@@ -157,6 +154,7 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Update current scroll position.
 	//--------------------------------------------------------------------------
 	updateScroll: function() {
 		//console.log( 'scroll' );
@@ -167,6 +165,7 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Update the navigation display.
 	//--------------------------------------------------------------------------
 	updateNav: function() {
 		//console.log( 'updateNav' );
@@ -186,6 +185,7 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Update the header display.
 	//--------------------------------------------------------------------------
 	updateHeader: function() {
 		//console.log( 'updateHeader' );
@@ -203,6 +203,8 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Fetch page list and render the nav with page links.
+	//				After load + render is done, init page, update scroll, nav and header.
 	//--------------------------------------------------------------------------
 	fetchPages: function() {
 		var sandbox = this;
@@ -211,13 +213,12 @@ var Sandbox					= Class.extend({
 			if ( !!this.pageList && this.pageList.length ) {
 				this.pageList.reset( null );
 			}
-
+			// fetch data, and render the page list
 			this.pageList.fetch({
 
 				success: function( data ) {
 					// render nav/page list
 					var pageListView 	= new PageListView({ collection: data });
-
 					sandbox.$elNav.html( pageListView.render().el );
 
 					console.log( sandbox.title + ': fetchPages\n' );
@@ -234,7 +235,6 @@ var Sandbox					= Class.extend({
 					.updateScroll()
 					.updateNav()
 					.updateHeader();
-
 			});
 		}
 
@@ -242,6 +242,8 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Fetch demo list and on success render the list.
+	//				After load + render is done, update scroll, nav and header.
 	//--------------------------------------------------------------------------
 	fetchDemos: function() {
 		var sandbox = this;
@@ -250,13 +252,12 @@ var Sandbox					= Class.extend({
 			if ( !!this.demoList && this.demoList.length ) {
 				this.demoList.reset( null );
 			}
-
+			// fetch data, and render demo list
 			this.demoList.fetch({
 
 				success: function( data ) {
 					// render demo list
 					var demoListView 	= new DemoListView({ collection: data });
-
 					sandbox.$elDemos.html( demoListView.render().el );
 
 					console.log( sandbox.title + ': fetchDemos\n' );
@@ -272,7 +273,6 @@ var Sandbox					= Class.extend({
 					.updateScroll()
 					.updateNav()
 					.updateHeader();
-
 			});
 		}
 
@@ -280,6 +280,7 @@ var Sandbox					= Class.extend({
 	},
 
 	//--------------------------------------------------------------------------
+	// @info		Render a 3D cube and update over time. TEST.
 	//--------------------------------------------------------------------------
 	render3D: function() {
 		var sandbox = this;

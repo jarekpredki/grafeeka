@@ -1,4 +1,4 @@
-/* PHOTO GALLERY 1 - VERTICAL COLUMNS */
+/* NBC GALLERIES / PHOTOS */
 
 #nbc-galleries {
 	display: inline-block;
@@ -12,6 +12,7 @@
 	line-height: 0px;
 }
 
+/* GALLERY */
 .nbc-gallery-info {
 	display: inline-block;
 	position: relative;
@@ -49,6 +50,7 @@
 	text-shadow: 0px 0px 1px #aaa;
 }
 
+/* PHOTO */
 .nbc-photo {
 	display: inline-block;
 	position: relative;
@@ -123,6 +125,7 @@
 	}
 }
 
+/* FULL SIZE PHOTO */
 #nbc-fullsize {
 	display:none;
 	position: fixed;

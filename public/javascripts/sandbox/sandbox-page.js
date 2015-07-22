@@ -3,8 +3,8 @@
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
-// models
 //------------------------------------------------------------------------------
+// MODEL: Page
 var Page					= Backbone.Model.extend({
 
 	defaults: {
@@ -17,8 +17,8 @@ var Page					= Backbone.Model.extend({
 
 });
 
-// collections
 //------------------------------------------------------------------------------
+// COLLECTION: PageList
 var PageList				= Backbone.Collection.extend({
 
 	model:				Page,
@@ -30,8 +30,8 @@ var PageList				= Backbone.Collection.extend({
 
 });
 
-// views
 //------------------------------------------------------------------------------
+// VIEW: PageView
 var PageView				= Backbone.View.extend({
 
 	tagName: 			'li',
@@ -50,6 +50,7 @@ var PageView				= Backbone.View.extend({
 });
 
 //------------------------------------------------------------------------------
+// VIEW: PageListView
 var PageListView			= Backbone.View.extend({
 
 	tagName: 			'ul',

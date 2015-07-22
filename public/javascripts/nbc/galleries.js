@@ -3,25 +3,15 @@
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
+// page elements
 var nbcGalleriesElement		= '#nbc-galleries';
-var nbcPhotosElement		= '#nbc-photos';
-var nbcFullSizeElement		= '#nbc-fullsize';
+// gallery list url
+var nbcGalleryListURL		= '/nbc-galleries-api/';
 
-// photo model
-var Photo					= Backbone.Model.extend({
-
-	defaults: {
-		// id +
-		caption:		'',
-		credit:			'',
-		width:			'',
-		height:			'',
-		url:			''
-	}
-});
-
-// gallery info model
-var GalleryInfo				= Backbone.Model.extend({
+//------------------------------------------------------------------------------
+// MODEL: Gallery
+// Holds info on a single gallery (local info)
+var Gallery					= Backbone.Model.extend({
 
 	defaults: {
 		// id +
@@ -32,19 +22,25 @@ var GalleryInfo				= Backbone.Model.extend({
 	}
 });
 
-// gallery collection data
-var GalleryInfoList			= Backbone.Collection.extend({
+//------------------------------------------------------------------------------
+// COLLECTION: Galleries
+// Holds a list of gallery instances, and gallery list info.
+var Galleries				= Backbone.Collection.extend({
 
-	model:				GalleryInfo,
-	url:				'/nbc-galleries-api/',
-
+	model:				Gallery,
+	// gallery list url
+	url:				nbcGalleryListURL,
+	// parse the galleries list
 	parse: function( data ) {
 		return data.galleries;
 	}
 
 });
 
-var GalleryInfoView			= Backbone.View.extend({
+//------------------------------------------------------------------------------
+// VIEW: GalleryView
+// Render logic for a single gallery instance.
+var GalleryView				= Backbone.View.extend({
 
 	tagName: 			'div',
 	className:			'nbc-gallery-info',
@@ -62,17 +58,19 @@ var GalleryInfoView			= Backbone.View.extend({
 
 });
 
+//------------------------------------------------------------------------------
+// VIEW: GalleriesView
+// Render logic for a a list of galleries.
 var GalleriesView			= Backbone.View.extend({
 
 	tagName: 			'div',
 	className: 			'nbc-galleries',
 
 	render: function() {
-
+		// run the collection of models and render each gallery view
 		this.collection.each( function( gallery ) {
-
-			var galleryInfoView		= new GalleryInfoView({ model: gallery });
-			this.$el.append( galleryInfoView.render().el );
+			var galleryView		= new GalleryView({ model: gallery });
+			this.$el.append( galleryView.render().el );
 
 		}, this );
 
@@ -81,18 +79,18 @@ var GalleriesView			= Backbone.View.extend({
 
 });
 
+//------------------------------------------------------------------------------
 $(function() {
 
-	// initialize a gallery
+	// initialize a gallery list
 	var demoTitle			= 'NBC Galleries';
-	var galleriesList		= new GalleryInfoList();
+	var galleries			= new Galleries();
 	console.log( 'Initializing ' + demoTitle + '...' );
-
-	// fetch data on success render the list
-	galleriesList.fetch({
+	// fetch data and render view
+	galleries.fetch({
 
 		success: function( data ) {
-
+			// create a new gallery list view, and render it
 			var galleriesView 	= new GalleriesView({ collection: data });
 			$( nbcGalleriesElement ).html( galleriesView.render().el );
 

@@ -3,9 +3,12 @@
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
+//------------------------------------------------------------------------------
 var Resume					= Sandbox.extend({
 
 	//--------------------------------------------------------------------------
+	// @info		Creates the sandbox app, and calls it's init methods to
+	//				setup the app, events and ui.
 	//--------------------------------------------------------------------------
 	create: function( settings ) {
 		// read settings and initialize

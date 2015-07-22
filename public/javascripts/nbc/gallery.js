@@ -4,7 +4,6 @@
 *******************************************************************************/
 
 // page elements
-//var nbcGalleriesElement		= '#nbc-galleries';
 var nbcPhotosElement		= '#nbc-photos';
 var nbcFullSizeElement		= '#nbc-fullsize';
 // gallery photo list; needs gallery id attached to the end for loading
@@ -12,6 +11,7 @@ var nbcGalleryPhotosURL		= '/nbc-photos-api/gallery/';
 // galleries url
 var nbcGalleriesURL			= '/nbc/';
 
+//------------------------------------------------------------------------------
 // MODEL: Photo
 // Holds info on a single photo instnce.
 var Photo				= Backbone.Model.extend({
@@ -26,6 +26,7 @@ var Photo				= Backbone.Model.extend({
 	}
 });
 
+//------------------------------------------------------------------------------
 // COLLECTION: Gallery
 // Holds a list of Photo instances and single gallery info.
 var Gallery				= Backbone.Collection.extend({
@@ -41,6 +42,7 @@ var Gallery				= Backbone.Collection.extend({
 
 });
 
+//------------------------------------------------------------------------------
 // VIEW: PhotoView
 // Display logic for a single photo instance.
 var PhotoView				= Backbone.View.extend({
@@ -66,10 +68,10 @@ var PhotoView				= Backbone.View.extend({
 
 	showFullSize: function() {
 		// create a full size view and render it
-		var fullSizeView		= new FullSizeView({ model: this.model });
+		var fullSizePhotoView	= new FullSizePhotoView({ model: this.model });
 		// hide photo list and show full size photo only
 		$( nbcPhotosElement ).css( 'display', 'none' );
-		$( nbcFullSizeElement ).html( fullSizeView.render().el );
+		$( nbcFullSizeElement ).html( fullSizePhotoView.render().el );
 		$( nbcFullSizeElement ).css( 'display', 'block' );
 
 		return this;
@@ -77,9 +79,10 @@ var PhotoView				= Backbone.View.extend({
 
 });
 
-// VIEW: FullSizeView
+//------------------------------------------------------------------------------
+// VIEW: FullSizePhotoView
 // Display logic for a single photo instance, in fullsize.
-var FullSizeView			= Backbone.View.extend({
+var FullSizePhotoView		= Backbone.View.extend({
 
 	tagName: 			'div',
 	className:			'nbc-fullsize',
@@ -111,6 +114,7 @@ var FullSizeView			= Backbone.View.extend({
 
 });
 
+//------------------------------------------------------------------------------
 // VIEW: GalleryView
 // Display logic for a single gallery (photo list).
 var GalleryView			= Backbone.View.extend({
@@ -130,6 +134,7 @@ var GalleryView			= Backbone.View.extend({
 
 });
 
+//------------------------------------------------------------------------------
 $(function() {
 
 	// initialize a gallery
@@ -146,8 +151,7 @@ $(function() {
 		success: function( data ) {
 			// create a new gallery view (photo list)
 			var galleryView 	= new GalleryView({ collection: data });
-			// hide the gallery list and show a single gallery (its photo list)
-			//$( nbcGalleriesElement ).css( 'display', 'none' );
+			// show a single gallery (its photo list)
 			$( nbcPhotosElement ).html( galleryView.render().el );
 			$( nbcPhotosElement ).css( 'display', 'block' );
 

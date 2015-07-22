@@ -3,8 +3,8 @@
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
-// models
-// demo model data
+//------------------------------------------------------------------------------
+// MODEL: Demo
 var Demo					= Backbone.Model.extend({
 
 	defaults: {
@@ -16,8 +16,8 @@ var Demo					= Backbone.Model.extend({
 
 });
 
-// collections
-// demo collection data
+//------------------------------------------------------------------------------
+// COLLECTION: DemoList
 var DemoList				= Backbone.Collection.extend({
 
 	model:				Demo,
@@ -29,8 +29,8 @@ var DemoList				= Backbone.Collection.extend({
 
 });
 
-// views
-// demo model view
+//------------------------------------------------------------------------------
+// VIEW: DemoView
 var DemoView				= Backbone.View.extend({
 
 	tagName: 			'li',
@@ -49,7 +49,8 @@ var DemoView				= Backbone.View.extend({
 
 });
 
-// demo list view
+//------------------------------------------------------------------------------
+// VIEW: DemoListView
 var DemoListView			= Backbone.View.extend({
 
 	tagName: 			'ul',

@@ -9,19 +9,23 @@ block body-content
 	#container
 		#content
 			.section#sandbox-journal(style="text-align:left;")
-				h3 My Journal // Todo List
+				h3 Todo List
 				ul
-					li finish the resume make over into Node/Backbone.
-					li finish Flip Book demo. (Use Three.js for hard book covers and put soft flip pages between two 3d objects. :)
-					li finish Web Socket Chat demo. (Client + Server for chat; and explore a gaming messaging system (p2p?, mmo?))
-					li move the journal into a blog maybe? hmm..!
-					li add incremental dynamic loading into photo galleries (scroll based).
+					li finish the resume make over into Node/Backbone. Much to do here, time permitting.
+					li turn the journal into a blog style page maybe? hmm..!
+					li add incremental dynamic loading into photo galleries, and integrate it into the demo galleries.
+					li do some respontive tuning for the ui (fonts, widths, sizes, etc.)
 					li.done <strong>done!</strong> - give landing page a visual make over. (Add bg, fonts, sizes, colors, etc.)
 					li.done <strong>done!</strong> - split landing page into a few sub pages. (info, demos, journal, etc.)
 					li.done <strong>done!</strong> - add shared header.
 					li.done <strong>done!</strong> - add shared footer.
 					li.done <strong>done!</strong> - add shared nav on child pages.
 					li.done <strong>done!</strong> - add nav json data path.
+
+				h3 Wish List
+				ul
+					li add a Node friendly database.
+					li move all data to database, and change REST API to use the db and return json (instead of reading from file).
 
 				h3 Todo // Photo Gallery 1
 				ul
@@ -31,14 +35,8 @@ block body-content
 				h3 Todo // Photo Gallery 2
 				ul
 					li add support for multiple galleries.
-					li make thumbnails and preveiw heights always match.
-					li fix horizonatal scroll bar (it's showing)
-
-				h3 Todo // WebGL & 3D
-				ul
-					li need to think of some 3d web apps to create, fun stuff.
-					li.done <strong>done!</strong> - add 3d capabilities with WebGL / Canvas.
-					li.done <strong>done!</strong> - integrate Three.js and get a 3d object spinning, rendering, etc.
+					li.done <strong>done!</strong> -  make thumbnails and preveiw heights always match.
+					li.done <strong>done!</strong> - fix horizonatal scroll bar (it's showing)
 
 				h3 Todo // REST API
 				ul
@@ -47,13 +45,22 @@ block body-content
 					li add 'incremental' api calls for photos -> /photos/:offset (will need for dynamic content loading)
 					li.done <strong>done!</strong> - add 'one' api calls for pages -> /pages/id/:id and /pages/url/:url
 
-				h3 My Journal // Wish List
+				h3 Notes // NBC Task
 				ul
-					li add a Node friendly database.
-					li move all data to database, and change REST API to use the db and return json (instead of reading from file).
-					li finish Flip Book demo (need to design mvc pattern for book, pages, page, photo, (mask?) models).
-					li finish WebSockets Chat demo (note: python rebuild issue, hmm..).
-					li.done <strong>done!</strong> - add 3d rendering with Canvas or WebGL.
+					li.done <strong>done!</strong> -  add new page(s) for the task.
+					li.done <strong>done!</strong> -  create new page code files; page routes; api routes
+					li.done <strong>done!</strong> -  create a gallery list showing task feed list
+					li.done <strong>done!</strong> -  wrap nbc feeds with local api's
+					li.done <strong>done!</strong> -  create api call for gallery list
+					li.done <strong>done!</strong> -  create api call for gallery info (local data)
+					li.done <strong>done!</strong> -  create api call for gallery data (remote data)
+					li.done <strong>done!</strong> -  create api call for gallery photo info (local data)
+					li.done <strong>done!</strong> -  create api call for gallery photo list (remote data)
+					li.done <strong>done!</strong> -  create galleries page (should show a list of all galleries)
+					li.done <strong>done!</strong> -  create gallery by id page (should show a list of all photos in one gallery, plus fullsize view)
+					li add navigation to galleries page
+					li add navigation to gallery page
+					li clean up ui a bit
 
 				.backdrop(style="background-color:#fff;")
 		.backdrop(style="background-color:#fff;")

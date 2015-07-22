@@ -3,8 +3,8 @@
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
-// models
-// photp model data
+//------------------------------------------------------------------------------
+// MODEL: Photo
 var Photo					= Backbone.Model.extend({
 
 	defaults: {
@@ -16,9 +16,9 @@ var Photo					= Backbone.Model.extend({
 
 });
 
-// collections
-// photo collection data
-var PhotoList				= Backbone.Collection.extend({
+//------------------------------------------------------------------------------
+// COLLECTION: Photos
+var Photos					= Backbone.Collection.extend({
 
 	model:				Photo,
 	url:				'/photos-api',
@@ -29,8 +29,8 @@ var PhotoList				= Backbone.Collection.extend({
 
 });
 
-// views
-// photo model view (thumbnail)
+//------------------------------------------------------------------------------
+// VIEW: PhotoView
 var PhotoView				= Backbone.View.extend({
 
 	tagName: 			'div',
@@ -61,7 +61,8 @@ var PhotoView				= Backbone.View.extend({
 
 });
 
-// photo model view (preview)
+//------------------------------------------------------------------------------
+// VIEW: PhotoPreviewView
 var PhotoPreviewView		= Backbone.View.extend({
 
 	tagName: 			'div',
@@ -81,8 +82,9 @@ var PhotoPreviewView		= Backbone.View.extend({
 
 });
 
-// photo list view
-var PhotoListView			= Backbone.View.extend({
+//------------------------------------------------------------------------------
+// VIEW: PhotosView
+var PhotosView				= Backbone.View.extend({
 
 	tagName: 			'div',
 	className: 			'pg2-photos',
@@ -90,7 +92,7 @@ var PhotoListView			= Backbone.View.extend({
 	render: function() {
 		// render each photo in the collection
 		this.collection.each( function( photo ) {
-			// create a new photo view and render
+			// create a new photo view and render it
 			var photoView		= new PhotoView({ model: photo });
 			this.$el.append( photoView.render().el );
 
@@ -100,25 +102,24 @@ var PhotoListView			= Backbone.View.extend({
 	}
 });
 
+//------------------------------------------------------------------------------
 $(function() {
 
 	// initialize a photo list
 	var demoTitle			= 'Photo Gallery: Thumbnails and Preview Pane';
-	var photoList			= new PhotoList();
+	var photos				= new Photos();
 	var photosElement		= '#pg2-photos';
 	var previewElement		= '#pg2-preview';
 
 	console.log( 'Initializing ' + demoTitle + '...' );
-
-
-	// fetch data on success render the list
-	photoList.fetch({
+	// fetch data and render the photo list
+	photos.fetch({
 
 		success: function( data ) {
 			// create a new photo list view and render it
-			var photoListView 	= new PhotoListView({ collection: data });
+			var photosView 		= new PhotosView({ collection: data });
 			// render and add html to element
-			$( photosElement ).html( photoListView.render().el );
+			$( photosElement ).html( photosView.render().el );
 			// if collection has photos, render the first one in the preview pane
 			if ( data.length ) {
 				// use the 1st photo in the collection (indexed:0)
