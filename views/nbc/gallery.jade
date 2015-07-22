@@ -8,14 +8,20 @@ html
 		script( type='text/javascript' src='/public/javascripts/lib/jquery.min.js' )
 		script( type='text/javascript' src='/public/javascripts/lib/handlebars.js' )
 		script( type='text/javascript' src='/public/javascripts/lib/backbone-min.js' )
-		script( type='text/javascript' src='/public/javascripts/nbc/galleries.js' )
+		script( type='text/javascript' src='/public/javascripts/nbc/gallery.js' )
 	body
 	#nbc-galleries
+	#nbc-photos
+	#nbc-fullsize
 
-	script( id='nbc-gallery-info-template', type='text/x-handlebars-template' )
-		h1.
-			{{name}}
+	script( id='nbc-photo-template', type='text/x-handlebars-template' )
+		<img id="nbc-photo-{{id}}" src="{{url}}" title="Click to view full size" />
+		p.
+			{{name}}<br>
+			{{date}}
+
+	script( id='nbc-fullsize-template', type='text/x-handlebars-template' )
+		<img id="nbc-fullsize-{{id}}" src="{{url}}" title="Click to close" />
 		p.
 			{{caption}}<br>
-			Credit: {{credit}} (Source: {{source}})<br>
-		a(href="/nbc/{{id}}") <img id="nbc-gallery-{{id}}" src="{{image}}" title="Click to view gallery" />
+			Credit: {{credit}}
