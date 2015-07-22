@@ -3,12 +3,18 @@
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
-var nbcGalleriesElement		= '#nbc-galleries';
+// page elements
+//var nbcGalleriesElement		= '#nbc-galleries';
 var nbcPhotosElement		= '#nbc-photos';
 var nbcFullSizeElement		= '#nbc-fullsize';
+// gallery photo list; needs gallery id attached to the end for loading
+var nbcGalleryPhotosURL		= '/nbc-photos-api/gallery/';
+// galleries url
+var nbcGalleriesURL			= '/nbc/';
 
-// photo model
-var Photo					= Backbone.Model.extend({
+// MODEL: Photo
+// Holds info on a single photo instnce.
+var Photo				= Backbone.Model.extend({
 
 	defaults: {
 		// id +
@@ -20,25 +26,30 @@ var Photo					= Backbone.Model.extend({
 	}
 });
 
-// photo collection data
-var GalleryList				= Backbone.Collection.extend({
+// COLLECTION: Gallery
+// Holds a list of Photo instances and single gallery info.
+var Gallery				= Backbone.Collection.extend({
 
 	model:				Photo,
-	url:				'/nbc-photos-api/gallery/',		// needs gallery id added at the end before loading
+	// photo list url; needs gallery id added at the end before loading
+	url:				nbcGalleryPhotosURL,
 
+	// parse the photos list from loaded data
 	parse: function( data ) {
 		return data.photos;
 	}
 
 });
 
-// photo model view
+// VIEW: PhotoView
+// Display logic for a single photo instance.
 var PhotoView				= Backbone.View.extend({
 
 	tagName: 			'div',
 	className:			'nbc-photo',
 
 	events: {
+		// click to hide photo list and show full size photo
 		"click":			"showFullSize"
 	},
 
@@ -54,10 +65,9 @@ var PhotoView				= Backbone.View.extend({
 	},
 
 	showFullSize: function() {
-		console.log( 'show full!' );
-
+		// create a full size view and render it
 		var fullSizeView		= new FullSizeView({ model: this.model });
-		// render and add html to element
+		// hide photo list and show full size photo only
 		$( nbcPhotosElement ).css( 'display', 'none' );
 		$( nbcFullSizeElement ).html( fullSizeView.render().el );
 		$( nbcFullSizeElement ).css( 'display', 'block' );
@@ -67,18 +77,19 @@ var PhotoView				= Backbone.View.extend({
 
 });
 
-// photo model view (preview)
+// VIEW: FullSizeView
+// Display logic for a single photo instance, in fullsize.
 var FullSizeView			= Backbone.View.extend({
 
 	tagName: 			'div',
 	className:			'nbc-fullsize',
 
 	events: {
+		// click to hide full size photo and show photo list
 		"click":			"hideFullSize"
 	},
 
 	render: function() {
-		//if ( !this.model )	{ return this; }
 		// get the template, compile it and populate with model data
 		var template 		= $( '#nbc-fullsize-template' ).html();
 		var compiled 		= Handlebars.compile( template );
@@ -90,7 +101,7 @@ var FullSizeView			= Backbone.View.extend({
 	},
 
 	hideFullSize: function() {
-		// render and add html to element
+		// hide full size photo and show photo list
 		$( nbcFullSizeElement ).css( 'display', 'none' );
 		$( nbcFullSizeElement ).html( '' );
 		$( nbcPhotosElement ).css( 'display', 'block' );
@@ -100,19 +111,18 @@ var FullSizeView			= Backbone.View.extend({
 
 });
 
-// photo list view
+// VIEW: GalleryView
+// Display logic for a single gallery (photo list).
 var GalleryView			= Backbone.View.extend({
 
 	tagName: 			'div',
 	className: 			'nbc-photos',
 
 	render: function() {
-
+		// run the collection of models, and redner each photo
 		this.collection.each( function( photo ) {
-
 			var photoView		= new PhotoView({ model: photo });
 			this.$el.append( photoView.render().el );
-
 		}, this );
 
 		return this;
@@ -124,18 +134,20 @@ $(function() {
 
 	// initialize a gallery
 	var demoTitle			= 'NBC Gallery';
-	var galleryID			= this.location.pathname.replace( '/nbc/', '' );
-	var galleryList			= new GalleryList();
-	galleryList.url			= '/nbc-photos-api/gallery/' + galleryID;
+	var gallery				= new Gallery();
+	// get gallery id from the location path
+	var galleryID			= this.location.pathname.replace( nbcGalleriesURL, '' );
 	console.log( 'Initializing ' + demoTitle + ' ' + galleryID + '...' );
-
-	// fetch data on success render the list
-	galleryList.fetch({
+	// set the gallery url (add the gallery id to the path)
+	gallery.url				= nbcGalleryPhotosURL + galleryID;
+	// fetch data and render the view
+	gallery.fetch({
 
 		success: function( data ) {
-
+			// create a new gallery view (photo list)
 			var galleryView 	= new GalleryView({ collection: data });
-			$( nbcGalleriesElement ).css( 'display', 'none' );
+			// hide the gallery list and show a single gallery (its photo list)
+			//$( nbcGalleriesElement ).css( 'display', 'none' );
 			$( nbcPhotosElement ).html( galleryView.render().el );
 			$( nbcPhotosElement ).css( 'display', 'block' );
 

@@ -38,39 +38,39 @@
 		},
 		{
 			"id": "7",
-			"name": "DEMO: Photo Galleries (NBC Task)",
-			"description": "This demo is the task I was given for the NBC interview. It mentions the creation of a page with the ability to view a list of galleries, a single gallery with all of its photos, and the ability to view a single photo. Users should also be able to navigate between galleries, and photos.",
-			"url": "/nbc"
-		},
-		{
-			"id": "8",
-			"name": "DEMO: Photo Gallery 1 (NBC Task)",
-			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 1.",
-			"url": "/nbc/1"
-		},
-		{
-			"id": "9",
-			"name": "DEMO: Photo Gallery 2 (NBC Task)",
-			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 2.",
-			"url": "/nbc/2"
-		},
-		{
-			"id": "10",
-			"name": "DEMO: Photo Gallery 3 (NBC Task)",
-			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 3.",
-			"url": "/nbc/3"
-		},
-		{
-			"id": "11",
 			"name": "REST API: List of Demos (Sandbox)",
 			"description": "Returns a json document with a list of demos to show on the demos page.",
 			"url": "/demos-api"
 		},
 		{
-			"id": "12",
+			"id": "8",
 			"name": "REST API: List of Photos (Sandbox)",
 			"description": "Returns a json document with a list of photos, their name, description, date and url.",
 			"url": "/photos-api"
+		},
+		{
+			"id": "9",
+			"name": "DEMO: Photo Galleries (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. It mentions the creation of a page with the ability to view a list of galleries, a single gallery with all of its photos, and the ability to view a single photo. Users should also be able to navigate between galleries, and photos.",
+			"url": "/nbc"
+		},
+		{
+			"id": "10",
+			"name": "DEMO: Photo Gallery 1 (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 1.",
+			"url": "/nbc/1"
+		},
+		{
+			"id": "11",
+			"name": "DEMO: Photo Gallery 2 (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 2.",
+			"url": "/nbc/2"
+		},
+		{
+			"id": "12",
+			"name": "DEMO: Photo Gallery 3 (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 3.",
+			"url": "/nbc/3"
 		},
 		{
 			"id": "13",
