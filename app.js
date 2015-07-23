@@ -54,6 +54,8 @@ app.use( '/', 								sandboxIndex );				// sandbox landing page
 app.use( '/info', 							sandboxInfo );				// info page
 app.use( '/demos', 							sandboxDemos );				// demos page
 app.use( '/journal', 						sandboxJournal );			// journal page
+app.use( '/photogallery1', 					photoGallery1 );			// photo gallery 1 page
+app.use( '/photogallery2', 					photoGallery2 );			// photo gallery 2 page
 app.use( '/jarekpredki', 					jarekpredki );				// resume landing page
 //app.use( '/jarekpredki/basics', 			jarekpredkiBasics );		// basics page (moved to landing page)
 app.use( '/jarekpredki/lookingforwork',		jarekpredkiLFW );			// lfw page
@@ -62,14 +64,12 @@ app.use( '/jarekpredki/education', 			jarekpredkiEducation );		// education page
 app.use( '/jarekpredki/history', 			jarekpredkiHistory );		// history page
 app.use( '/jarekpredki/gallery', 			jarekpredkiGallery );		// gallery page
 app.use( '/jarekpredki/contact', 			jarekpredkiContact );		// contact page
-app.use( '/photogallery1', 					photoGallery1 );			// photo gallery 1 page
-app.use( '/photogallery2', 					photoGallery2 );			// photo gallery 2 page
 // setup RESTful API
 app.use( '/pages-api', 						sandboxPagesAPI );			// pages api
 app.use( '/demos-api', 						sandboxDemosAPI );			// demos api
 app.use( '/photos-api', 					sandboxPhotosAPI );			// photos api
 // NBC Task
-app.use( '/nbc', 							nbcGalleries );				// nbc task - galleries page
+app.use( '/nbc', 							nbcGalleries );				// nbc task - galleries/gallery page(s)
 app.use( '/nbc-galleries-api', 				nbcGalleriesAPI );			// nbc task - galleries api
 app.use( '/nbc-photos-api', 				nbcPhotosAPI );				// nbc task - photos api
 

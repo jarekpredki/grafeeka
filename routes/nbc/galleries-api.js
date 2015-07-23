@@ -40,7 +40,7 @@ var getGalleryByID			= function( file, req, res, next ) {
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
 		if ( error ) 		{ throw 'Can\'t find ' + file + ' in /public/json/'; }
 
-		res.writeHead( 200, { 'content-type': 'application/json' });
+		res.writeHead( 200, { 'content-type': 'application/json', 'Cache-Control': 'max-age=86400', 'Expires': new Date(Date.now() + 86400000 ).toUTCString() });	// 24 hours
 		res.write( searchByParamater( data, 'id', req.params.id ));
 		res.end();
 	});
@@ -58,7 +58,7 @@ var loadGalleryData			= function( gallery, req, res ) {
 		var json 	= JSON.parse( data ).results[0];
 		data		= JSON.stringify( json );
 		//console.log( data || '' );
-		res.writeHead( 200, { 'content-type': 'application/json' });
+		res.writeHead( 200, { 'content-type': 'application/json', 'Cache-Control': 'max-age=86400', 'Expires': new Date(Date.now() + 86400000 ).toUTCString() });
 		res.write( data );
 		res.end();
 	});
@@ -72,7 +72,7 @@ router.get( '/', function( req, res, next ) {
 	fs.readFile( './public/json/' + galleriesFile, 'utf8', function( error, data ) {
 		if ( error ) 		{ throw 'Can\'t to find ' + galleriesFile + ' in /public/json/'; }
 
-		res.writeHead( 200, { 'content-type': 'application/json' });
+		res.writeHead( 200, { 'content-type': 'application/json', 'Cache-Control': 'max-age=86400', 'Expires': new Date(Date.now() + 86400000 ).toUTCString() });
 		res.write( data );
 		res.end();
 
