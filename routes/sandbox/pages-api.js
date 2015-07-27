@@ -38,9 +38,6 @@ var getRootPages			= function( file, req, res, next ) {
 			throw 'Can\'t find ' + file + ' in /public/json/';
 		} else {
 			res.json( typeof( data ) != 'undefined' ? JSON.parse( data ) : null );
-			/*res.writeHead( 200, { 'content-type': 'application/json' });
-			res.write( data );
-			res.end();*/
 		}
 	});
 };
@@ -53,9 +50,6 @@ var getPageByID				= function( file, req, res, next ) {
 			throw 'Can\'t find ' + file + ' in /public/json/';
 		} else {
 			res.json( typeof( data ) != 'undefined' ? JSON.parse( searchByParamater( data, 'id', req.params.id )) : null );
-			/*res.writeHead( 200, { 'content-type': 'application/json' });
-			res.write( searchByParamater( data, 'id', req.params.id ));
-			res.end();*/
 		}
 	});
 };
@@ -68,9 +62,6 @@ var getPageByURL			= function( file, req, res, next ) {
 			throw 'Can\'t find ' + file + ' in /public/json/';
 		} else {
 			res.json( typeof( data ) != 'undefined' ? JSON.parse( searchByParamater( data, 'url', req.params.url )) : null );
-			/*res.writeHead( 200, { 'content-type': 'application/json' });
-			res.write( searchByParamater( data, 'url', req.params.url ));
-			res.end();*/
 		}
 	});
 };

@@ -46,10 +46,11 @@ app.set( 'view engine', 'jade' );
 
 // setup application
 app.use( favicon( __dirname + '/public/favicon.ico' ));
-app.use( logger( 'dev' ));
 app.use( bodyParser.json());
+app.use( bodyParser.text());
 app.use( bodyParser.urlencoded({ extended: false }));
 app.use( cookieParser());
+app.use( logger( 'dev' ));
 app.use( '/public', express.static( path.join( __dirname, 'public' )));
 
 // setup page routes

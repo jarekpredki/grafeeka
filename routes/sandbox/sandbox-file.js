@@ -8,24 +8,26 @@ var router 					= express.Router();
 
 router.get( '/:file', function( req, res, next ) {
 	var fileRequest = req.params.file;
-	console.log( '> ' + fileRequest );
+	var fileExtension = fileRequest.substring( fileRequest.lastIndexOf( '.' ) + 1 );
 	// load and send: robots.txt
 	if ( fileRequest == 'robots.txt' ) {
-		var fileResponse = 'robotsfix.txt', options = {
-			root: './public/',
-			dotfiles: 'allow',
-			headers: {
-				'x-timestamp': Date.now(),
-				'x-sent': true
-			}
-		};
+		var fileResponse = fileRequest.replace( '.txt', 'fix.txt' ),
+			options = {
+				root: './public/',
+				dotfiles: 'allow',
+				headers: {
+					'x-timestamp': Date.now(),
+					'x-sent': true
+				}
+			};
+		console.log( '> LOADING > /' + fileRequest + ', ' + fileExtension );
 		// send the requested file
 		res.sendFile( fileResponse, options, function( error ) {
 			if ( error ) {
-				console.log( '> ERROR loading robotsfix.txt' + ' - ' + error );
+				console.log( '> ERROR > /' + fileResponse + ', ' + error );
 				res.status( error.status ).end();
 			} else {
-				console.log( '> LOADED robotsfix.txt' );
+				console.log( '> LOADED > /' + fileResponse );
 				res.end();
 			}
 		});

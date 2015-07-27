@@ -13,7 +13,7 @@ a:hover,a:active,a:focus{color:#550000;text-shadow:0px 1px 1px #000;text-decorat
 #nav>ul>li>p{color:#333;text-shadow:0px 1px 2px #999;font-size:18px;letter-spacing:2px;margin:0px 10px;}
 #nav>ul>li>p>a{}
 #footer{width:calc( 100% - 50px );margin:0px 0px;padding:15px 25px;color:#fff;letter-spacing:2px;text-align:center;}
-.section{position:relative;top:0px;left:0px;width:calc( 100% - 50px );text-align:center;padding:50px 50px;font:18px "Lucida Grande",Helvetica,Arial,sans-serif;color:#333;}
+.section{position:relative;top:0px;left:0px;width:calc( 100% - 100px );text-align:center;padding:50px 50px;font:18px "Lucida Grande",Helvetica,Arial,sans-serif;color:#333;}
 .section>h1,.section>h2,.section>h3{width:100%;color:#fff;text-shadow:0px 3px 6px #000;}
 .backdrop{position:absolute!important;top:0px;left:0px;width:100%;height:100%;opacity:0.7;background-color:#fff;z-index:1!important;}
 
