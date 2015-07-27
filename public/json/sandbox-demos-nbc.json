@@ -1,0 +1,54 @@
+		{
+			"id": "9",
+			"name": "DEMO: Photo Galleries (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. It mentions the creation of a page with the ability to view a list of galleries, a single gallery with all of its photos, and the ability to view a single photo. Users should also be able to navigate between galleries, and photos.",
+			"url": "/nbc"
+		},
+		{
+			"id": "10",
+			"name": "DEMO: Photo Gallery 1 (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 1.",
+			"url": "/nbc/1"
+		},
+		{
+			"id": "11",
+			"name": "DEMO: Photo Gallery 2 (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 2.",
+			"url": "/nbc/2"
+		},
+		{
+			"id": "12",
+			"name": "DEMO: Photo Gallery 3 (NBC Task)",
+			"description": "This demo is the task I was given for the NBC interview. Direct link to gallery 3.",
+			"url": "/nbc/3"
+		},
+		{
+			"id": "13",
+			"name": "REST API: List of NBC Galleries (NBC Task)",
+			"description": "Returns a json document with a list of galleries, their name and url.",
+			"url": "/nbc-galleries-api"
+		},
+		{
+			"id": "14",
+			"name": "REST API: NBC Gallery Info (1) (NBC Task)",
+			"description": "Returns a json document with information about gallery with id: 1. Info comes from local galleries data.",
+			"url": "/nbc-galleries-api/info/1"
+		},
+		{
+			"id": "15",
+			"name": "REST API: NBC Gallery Data (1) (NBC Task)",
+			"description": "Returns a json document with a the entire gallery json for gallery with id: 1. Info comes from remote NBC source.",
+			"url": "/nbc-galleries-api/data/1"
+		},
+		{
+			"id": "16",
+			"name": "REST API: List of NBC Photos (1) (NBC Task)",
+			"description": "Returns a json document with a local gallery info.",
+			"url": "/nbc-photos-api/info/1"
+		},
+		{
+			"id": "17",
+			"name": "REST API: List of NBC Photos (1) (NBC Task)",
+			"description": "Returns a json document with a list of gallery photos, from remote data source.",
+			"url": "/nbc-photos-api/gallery/1"
+		}

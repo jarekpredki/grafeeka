@@ -13,7 +13,6 @@ var Photo					= Backbone.Model.extend({
 		description:	'',
 		url:			''
 	}
-
 });
 
 //------------------------------------------------------------------------------
@@ -26,7 +25,6 @@ var Photos					= Backbone.Collection.extend({
 	parse: function( data ) {
 		return data.photos;
 	}
-
 });
 
 //------------------------------------------------------------------------------
@@ -58,7 +56,6 @@ var PhotoView				= Backbone.View.extend({
 
 		return this;
 	}
-
 });
 
 //------------------------------------------------------------------------------
@@ -79,7 +76,6 @@ var PhotoPreviewView		= Backbone.View.extend({
 
 		return this;
 	}
-
 });
 
 //------------------------------------------------------------------------------

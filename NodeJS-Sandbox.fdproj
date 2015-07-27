@@ -26,6 +26,11 @@
     <hidden path="obj" />
     <hidden path="version.exe" />
     <hidden path="LICENSE" />
+    <hidden path="public\stylesheets\nbc-task.min.css" />
+    <hidden path="public\stylesheets\photogallery1.min.css" />
+    <hidden path="public\stylesheets\photogallery2.min.css" />
+    <hidden path="public\stylesheets\sandbox.min.css" />
+    <hidden path="public\stylesheets\style.min.css" />
   </hiddenPaths>
   <!-- Executed before build -->
   <preBuildCommand />

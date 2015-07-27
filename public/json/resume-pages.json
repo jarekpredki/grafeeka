@@ -2,8 +2,8 @@
 	"nav": [
 		{
 			"id": "1",
-			"title": "Sandbox",
-			"subtitle": "Return to the Sandbox",
+			"title": "Back to Sandbox",
+			"subtitle": "Return to the main NodeJS Sandbox Site",
 			"url": "/",
 			"route": "./routes/sandbox/sandbox"
 		},

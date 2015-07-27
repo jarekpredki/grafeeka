@@ -25,7 +25,6 @@ var Photos					= Backbone.Collection.extend({
 	parse: function( data ) {
 		return data.photos;
 	}
-
 });
 
 //------------------------------------------------------------------------------
@@ -59,7 +58,6 @@ var PhotoView				= Backbone.View.extend({
 
 		return this;
 	}
-
 });
 
 //------------------------------------------------------------------------------
@@ -93,7 +91,6 @@ var FullSizePhotoView		= Backbone.View.extend({
 
 		return this;
 	}
-
 });
 
 //------------------------------------------------------------------------------
@@ -113,7 +110,6 @@ var PhotosView				= Backbone.View.extend({
 
 		return this;
 	}
-
 });
 
 //------------------------------------------------------------------------------
