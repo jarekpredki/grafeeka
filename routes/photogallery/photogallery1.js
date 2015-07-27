@@ -7,7 +7,7 @@ var router 					= express.Router();
 
 router.get( '/', function( req, res, next ) {
 
-	res.render( 'photogallery1/photogallery1', { title: 'Photo Gallery: Vertical Style' });
+	res.render( 'photogallery/photogallery1', { title: 'Photo Gallery - Vertical Columns' });
 
 });
 

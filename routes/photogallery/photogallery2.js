@@ -7,7 +7,7 @@ var router 					= express.Router();
 
 router.get( '/', function( req, res, next ) {
 
-	res.render( 'photogallery2/photogallery2', { title: 'Photo Gallery - Thumbnails and Preview Pane' });
+	res.render( 'photogallery/photogallery2', { title: 'Photo Gallery - Thumbnails and Preview Pane' });
 
 });
 
