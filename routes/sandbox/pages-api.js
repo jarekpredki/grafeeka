@@ -5,12 +5,10 @@
 
 var express 				= require( 'express' );
 var fs 						= require( 'fs' );
+var router 					= express.Router();
 
 var sandboxFile				= 'sandbox-pages.json';
 var resumeFile				= 'resume-pages.json';
-
-// get express router
-var router 					= express.Router();
 
 //------------------------------------------------------------------------------
 // @function		searchByParamater
@@ -38,12 +36,14 @@ var getRootPages			= function( file, req, res, next ) {
 	// this method of getting the json data list is a demo only solution.
 	// normally this data would come from a database.
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
-
-		if ( error ) 		{ throw 'Can\'t find ' + file + ' in /public/json/'; }
-
-		res.writeHead( 200, { 'content-type': 'application/json' });
-		res.write( data );
-		res.end();
+		if ( error ) {
+			throw 'Can\'t find ' + file + ' in /public/json/';
+		} else {
+			res.json( typeof( data ) != 'undefined' ? JSON.parse( data ) : null );
+			/*res.writeHead( 200, { 'content-type': 'application/json' });
+			res.write( data );
+			res.end();*/
+		}
 	});
 };
 
@@ -53,12 +53,14 @@ var getPageByID				= function( file, req, res, next ) {
 	// this method of getting the json data list is a demo only solution.
 	// normally this data would come from a database.
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
-
-		if ( error ) 		{ throw 'Can\'t find ' + file + ' in /public/json/'; }
-
-		res.writeHead( 200, { 'content-type': 'application/json' });
-		res.write( searchByParamater( data, 'id', req.params.id ));
-		res.end();
+		if ( error ) {
+			throw 'Can\'t find ' + file + ' in /public/json/';
+		} else {
+			res.json( typeof( data ) != 'undefined' ? JSON.parse( searchByParamater( data, 'id', req.params.id )) : null );
+			/*res.writeHead( 200, { 'content-type': 'application/json' });
+			res.write( searchByParamater( data, 'id', req.params.id ));
+			res.end();*/
+		}
 	});
 };
 
@@ -68,12 +70,14 @@ var getPageByURL			= function( file, req, res, next ) {
 	// this method of getting the json data list is a demo only solution.
 	// normally this data would come from a database.
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
-
-		if ( error ) 		{ throw 'Can\'t find ' + file + ' in /public/json/'; }
-
-		res.writeHead( 200, { 'content-type': 'application/json' });
-		res.write( searchByParamater( data, 'url', req.params.url ));
-		res.end();
+		if ( error ) {
+			throw 'Can\'t find ' + file + ' in /public/json/';
+		} else {
+			res.json( typeof( data ) != 'undefined' ? JSON.parse( searchByParamater( data, 'url', req.params.url )) : null );
+			/*res.writeHead( 200, { 'content-type': 'application/json' });
+			res.write( searchByParamater( data, 'url', req.params.url ));
+			res.end();*/
+		}
 	});
 };
 
