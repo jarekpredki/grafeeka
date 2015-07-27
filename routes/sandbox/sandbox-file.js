@@ -9,6 +9,7 @@ var router 					= express.Router();
 router.get( '/:file', function( req, res, next ) {
 	var fileRequest = req.params.file;
 	console.log( '> ' + fileRequest );
+	// load and send: robots.txt
 	if ( fileRequest == 'robots.txt' ) {
 		var fileResponse = 'robotsfix.txt', options = {
 			root: './public/',
@@ -28,6 +29,8 @@ router.get( '/:file', function( req, res, next ) {
 				res.end();
 			}
 		});
+	} else {
+		next();
 	}
 });
 
