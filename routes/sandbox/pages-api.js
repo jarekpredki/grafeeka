@@ -1,5 +1,5 @@
 /*******************************************************************************
-* @demo		NodeJS Sandbox
+* @route	NodeJS Sandbox
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
@@ -32,9 +32,7 @@ var searchByParamater		= function( data, param, value ) {
 
 //------------------------------------------------------------------------------
 var getRootPages			= function( file, req, res, next ) {
-
-	// this method of getting the json data list is a demo only solution.
-	// normally this data would come from a database.
+	// read file and return its json data
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
 		if ( error ) {
 			throw 'Can\'t find ' + file + ' in /public/json/';
@@ -49,9 +47,7 @@ var getRootPages			= function( file, req, res, next ) {
 
 //------------------------------------------------------------------------------
 var getPageByID				= function( file, req, res, next ) {
-
-	// this method of getting the json data list is a demo only solution.
-	// normally this data would come from a database.
+	// read file and return its json data
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
 		if ( error ) {
 			throw 'Can\'t find ' + file + ' in /public/json/';
@@ -66,9 +62,7 @@ var getPageByID				= function( file, req, res, next ) {
 
 //------------------------------------------------------------------------------
 var getPageByURL			= function( file, req, res, next ) {
-
-	// this method of getting the json data list is a demo only solution.
-	// normally this data would come from a database.
+	// read file and return its json data
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
 		if ( error ) {
 			throw 'Can\'t find ' + file + ' in /public/json/';

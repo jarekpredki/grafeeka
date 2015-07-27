@@ -11,6 +11,7 @@ var cookieParser 			= require( 'cookie-parser' );
 var bodyParser 				= require( 'body-parser' );
 
 // sandbox pages routes
+var sandboxFile				= require( './routes/sandbox/sandbox-file' );				// page
 var sandboxIndex			= require( './routes/sandbox/sandbox-index' );				// page
 var sandboxInfo 			= require( './routes/sandbox/sandbox-info' );				// page
 var sandboxDemos 			= require( './routes/sandbox/sandbox-demos' );				// page
@@ -52,6 +53,7 @@ app.use( cookieParser());
 app.use( '/public', express.static( path.join( __dirname, 'public' )));
 
 // setup page routes
+app.use( '/', 								sandboxFile );				// sandbox file serving
 app.use( '/', 								sandboxIndex );				// sandbox landing page
 app.use( '/info', 							sandboxInfo );				// info page
 app.use( '/demos', 							sandboxDemos );				// demos page

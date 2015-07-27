@@ -1,10 +1,9 @@
 /*******************************************************************************
-* @demo		NodeJS Sandbox
+* @route	NodeJS Sandbox
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
 var express 				= require( 'express' );
-
 var router 					= express.Router();
 
 router.get( '/', function( req, res, next ) {
@@ -13,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'NodeJS Sandbox',
 		subtitle: 'by Jaroslaw Predki'
 	});
-
 });
 
 module.exports 				= router;

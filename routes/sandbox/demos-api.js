@@ -1,5 +1,5 @@
 /*******************************************************************************
-* @demo		NodeJS Sandbox
+* @route	NodeJS Sandbox
 * @author	Jaroslaw Predki
 *******************************************************************************/
 
@@ -10,9 +10,7 @@ var router 					= express.Router();
 var sandboxFile				= 'sandbox-demos.json';
 
 router.get( '/', function( req, res, next ) {
-
-	// this method of getting the json data list is a demo only solution.
-	// normally this data would come from a database.
+	// read sandboxFile and return its json data
 	fs.readFile( './public/json/' + sandboxFile, 'utf8', function( error, data ) {
 		if ( error ) {
 			throw 'Can\'t to find ' + sandboxFile + ' in /public/json/';
