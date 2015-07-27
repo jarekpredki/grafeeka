@@ -12,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'Project Gallery',
 		subtitle: 'Past Projects // Memorable Clients'
 	});
-
 });
 
 module.exports 				= router;

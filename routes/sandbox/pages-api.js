@@ -1,6 +1,12 @@
 /*******************************************************************************
 * @route	NodeJS Sandbox
 * @author	Jaroslaw Predki
+* @routes	/sandbox				- returns list of sandbox pages
+*			/sandbox/id/{{id}}		- returns sandbox page by id
+*			/sandbox/url/{{url}}	- returns sandbox page by url
+*			/resume					- returns list of resume pages
+*			/resume/id/{{id}}		- returns resume page by id
+*			/resume/url/{{url}}}	- returns resume page by url
 *******************************************************************************/
 
 var express 				= require( 'express' );
@@ -31,6 +37,8 @@ var searchByParamater		= function( data, param, value ) {
 };
 
 //------------------------------------------------------------------------------
+// @function		getRootPages
+//------------------------------------------------------------------------------
 var getRootPages			= function( file, req, res, next ) {
 	// read file and return its json data
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
@@ -43,6 +51,8 @@ var getRootPages			= function( file, req, res, next ) {
 };
 
 //------------------------------------------------------------------------------
+// @function		getPageByID
+//------------------------------------------------------------------------------
 var getPageByID				= function( file, req, res, next ) {
 	// read file and return its json data
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
@@ -54,6 +64,8 @@ var getPageByID				= function( file, req, res, next ) {
 	});
 };
 
+//------------------------------------------------------------------------------
+// @function		getPageByURL
 //------------------------------------------------------------------------------
 var getPageByURL			= function( file, req, res, next ) {
 	// read file and return its json data

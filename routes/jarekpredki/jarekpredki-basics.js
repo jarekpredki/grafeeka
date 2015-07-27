@@ -12,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'The Basics',
 		subtitle: 'Who? What? Where?'
 	});
-
 });
 
 module.exports 				= router;

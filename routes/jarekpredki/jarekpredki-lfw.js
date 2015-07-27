@@ -12,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'Looking for Work',
 		subtitle: 'Senior // Game or Web // Development Engineer'
 	});
-
 });
 
 module.exports 				= router;

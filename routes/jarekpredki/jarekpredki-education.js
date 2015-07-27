@@ -12,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'Education',
 		subtitle: 'University // Research // Projects // Other Studies'
 	});
-
 });
 
 module.exports 				= router;

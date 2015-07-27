@@ -12,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'Experience',
 		subtitle: 'Work History // Personal Projects // Future Plans'
 	});
-
 });
 
 module.exports 				= router;

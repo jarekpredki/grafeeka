@@ -12,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'Contact Information',
 		subtitle: 'Phone // E-Mail // Social Networks'
 	});
-
 });
 
 module.exports 				= router;

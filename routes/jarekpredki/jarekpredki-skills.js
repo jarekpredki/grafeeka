@@ -12,7 +12,6 @@ router.get( '/', function( req, res, next ) {
 		title: 'Programming Skills',
 		subtitle: 'Languages // Methodologies // Applications // Research'
 	});
-
 });
 
 module.exports 				= router;
