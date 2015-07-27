@@ -30,11 +30,13 @@ var photoGallery2 			= require( './routes/photogallery/photogallery2' );			// pa
 var sandboxPagesAPI			= require( './routes/sandbox/pages-api' );					// api
 var sandboxDemosAPI 		= require( './routes/sandbox/demos-api' );					// api
 var sandboxPhotosAPI		= require( './routes/photogallery/photos-api' );			// api
+/*
+// NOTE: Commenting out, was only for interview.
 // NBC task
 var nbcGalleries 			= require( './routes/nbc/galleries' );						// page
 var nbcGalleriesAPI			= require( './routes/nbc/galleries-api' );					// api
 var nbcPhotosAPI			= require( './routes/nbc/photos-api' );						// api
-
+*/
 var app 					= express();
 
 // view engine setup
@@ -68,10 +70,13 @@ app.use( '/jarekpredki/contact', 			jarekpredkiContact );		// contact page
 app.use( '/pages-api', 						sandboxPagesAPI );			// pages api
 app.use( '/demos-api', 						sandboxDemosAPI );			// demos api
 app.use( '/photos-api', 					sandboxPhotosAPI );			// photos api
+/*
+// NOTE: Commenting out, was only for interview.
 // NBC Task
 app.use( '/nbc', 							nbcGalleries );				// nbc task - galleries/gallery page(s)
 app.use( '/nbc-galleries-api', 				nbcGalleriesAPI );			// nbc task - galleries api
 app.use( '/nbc-photos-api', 				nbcPhotosAPI );				// nbc task - photos api
+*/
 
 // error handlers
 

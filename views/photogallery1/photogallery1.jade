@@ -3,14 +3,16 @@ html
 	head
 		title= title
 		link( rel='stylesheet' href='/public/stylesheets/style.css' )
+		link( rel='stylesheet' href='/public/stylesheets/photogallery1.css' )
 		script( type='text/javascript' src='/public/javascripts/lib/underscore-min.js' )
 		script( type='text/javascript' src='/public/javascripts/lib/jquery.min.js' )
 		script( type='text/javascript' src='/public/javascripts/lib/handlebars.js' )
 		script( type='text/javascript' src='/public/javascripts/lib/backbone-min.js' )
 		script( type='text/javascript' src='/public/javascripts/photogallery/photogallery1.js' )
 	body
-	#pg1-fullsize
-	#pg1-photos
+	#gallery-container
+		#gallery-photos
+		#gallery-photo-fullsize
 
 	script( id='photo-template', type='text/x-handlebars-template' )
 		<img id="photo-{{id}}" src="{{url}}" title="Click to view full size" />

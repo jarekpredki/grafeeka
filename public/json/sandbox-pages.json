@@ -37,24 +37,17 @@
 		},
 		{
 			"id": "6",
-			"title": "PG-1",
+			"title": "Gallery 1",
 			"subtitle": "",
 			"url": "/photogallery1",
 			"route": "./routes/photogallery/photogallery1"
 		},
 		{
 			"id": "7",
-			"title": "PG-2",
+			"title": "Gallery 2",
 			"subtitle": "",
 			"url": "/photogallery2",
 			"route": "./routes/photogallery/photogallery2"
-		},
-		{
-			"id": "8",
-			"title": "NBC Task",
-			"subtitle": "",
-			"url": "/nbc",
-			"route": "./routes/nbc"
 		}
 	]
 }

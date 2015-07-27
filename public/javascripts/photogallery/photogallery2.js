@@ -34,7 +34,7 @@ var Photos					= Backbone.Collection.extend({
 var PhotoView				= Backbone.View.extend({
 
 	tagName: 			'div',
-	className:			'pg2-photo',
+	className:			'gallery-photo',
 
 	events: {
 		"click":			"updatePreview"
@@ -54,7 +54,7 @@ var PhotoView				= Backbone.View.extend({
 	updatePreview: function() {
 		var previewView		= new PhotoPreviewView({ model: this.model });
 		// render and add html to element
-		$( '#pg2-preview' ).html( previewView.render().el );
+		$( '#gallery-photo-preview' ).html( previewView.render().el );
 
 		return this;
 	}
@@ -66,7 +66,7 @@ var PhotoView				= Backbone.View.extend({
 var PhotoPreviewView		= Backbone.View.extend({
 
 	tagName: 			'div',
-	className:			'pg2-photo-preview',
+	className:			'gallery-photo-preview',
 
 	render: function() {
 		if ( !this.model )	{ return this; }
@@ -87,7 +87,7 @@ var PhotoPreviewView		= Backbone.View.extend({
 var PhotosView				= Backbone.View.extend({
 
 	tagName: 			'div',
-	className: 			'pg2-photos',
+	className: 			'gallery-photos',
 
 	render: function() {
 		// render each photo in the collection
@@ -108,8 +108,8 @@ $(function() {
 	// initialize a photo list
 	var demoTitle			= 'Photo Gallery: Thumbnails and Preview Pane';
 	var photos				= new Photos();
-	var photosElement		= '#pg2-photos';
-	var previewElement		= '#pg2-preview';
+	var photosElement		= '#gallery-photos';
+	var previewElement		= '#gallery-photo-preview';
 
 	console.log( 'Initializing ' + demoTitle + '...' );
 	// fetch data and render the photo list

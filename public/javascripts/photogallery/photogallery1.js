@@ -33,7 +33,7 @@ var Photos					= Backbone.Collection.extend({
 var PhotoView				= Backbone.View.extend({
 
 	tagName: 			'div',
-	className:			'pg1-photo',
+	className:			'gallery-photo',
 
 	events: {
 		"click":			"showFullSize"
@@ -53,9 +53,9 @@ var PhotoView				= Backbone.View.extend({
 	showFullSize: function() {
 		var fullSizePhotoView	= new FullSizePhotoView({ model: this.model });
 		// render and add html to element
-		$( '#pg1-fullsize' ).html( fullSizePhotoView.render().el );
-		$( '#pg1-fullsize' ).css( 'display', 'block' );
-		$( '#pg1-photos' ).css( 'opacity', '0' );
+		$( '#gallery-photo-fullsize' ).html( fullSizePhotoView.render().el );
+		$( '#gallery-photo-fullsize' ).css( 'display', 'block' );
+		$( '#gallery-photos' ).css( 'opacity', '0' );
 
 		return this;
 	}
@@ -67,7 +67,7 @@ var PhotoView				= Backbone.View.extend({
 var FullSizePhotoView		= Backbone.View.extend({
 
 	tagName: 			'div',
-	className:			'pg1-photo-fullsize',
+	className:			'gallery-photo-fullsize',
 
 	events: {
 		"click":			"hideFullSize"
@@ -87,9 +87,9 @@ var FullSizePhotoView		= Backbone.View.extend({
 
 	hideFullSize: function() {
 		// render and add html to element
-		$( '#pg1-fullsize' ).html( '' );
-		$( '#pg1-photos' ).css( 'opacity', '1' );
-		$( '#pg1-fullsize' ).css( 'display', 'none' );
+		$( '#gallery-photo-fullsize' ).html( '' );
+		$( '#gallery-photos' ).css( 'opacity', '1' );
+		$( '#gallery-photo-fullsize' ).css( 'display', 'none' );
 
 		return this;
 	}
@@ -101,7 +101,7 @@ var FullSizePhotoView		= Backbone.View.extend({
 var PhotosView				= Backbone.View.extend({
 
 	tagName: 			'div',
-	className: 			'pg1-photos',
+	className: 			'gallery-photos',
 
 	render: function() {
 		// render each photo in the collection list
@@ -122,7 +122,7 @@ $(function() {
 	// initialize a photo list
 	var demoTitle			= 'Photo Gallery: Vertical Style';
 	var photos				= new Photos();
-	var photosElement		= '#pg1-photos';
+	var photosElement		= '#gallery-photos';
 
 	console.log( 'Initializing ' + demoTitle + '...' );
 	// fetch data and render the photo list
