@@ -25,7 +25,7 @@ var PageList				= Backbone.Collection.extend({
 	url:				'/pages-api/sandbox',
 
 	parse: function( data ) {
-		return data.nav;
+		return data.pages;
 	}
 
 });
@@ -38,6 +38,7 @@ var PageView				= Backbone.View.extend({
 	className:			'page',
 
 	render: function() {
+
 		var template 		= $( '#nav-item-template' ).html();
 		var compiled 		= Handlebars.compile( template );
 		var html			= compiled( this.model.attributes );

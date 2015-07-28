@@ -1,5 +1,5 @@
 {
-	"nav": [
+	"pages": [
 		{
 			"id": "1",
 			"title": "Back to Sandbox",
@@ -9,7 +9,7 @@
 		},
 		{
 			"id": "2",
-			"title": "Home",
+			"title": "Basics",
 			"subtitle": "of Jaroslaw Predki",
 			"url": "/jarekpredki",
 			"route": "./routes/jarekpredki/jarekpredki"

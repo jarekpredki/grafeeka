@@ -23,10 +23,10 @@ var resumeFile				= 'resume-pages.json';
 //------------------------------------------------------------------------------
 var searchByParamater		= function( data, param, value ) {
 	// parse the data json into an object and get it's count of 'pages'
-	var page, i, json = JSON.parse( data ), count = json.nav.length;
+	var page, i, json = JSON.parse( data ), count = json.pages.length;
 	// loop through the pages and find the requested one
 	for ( i = 0; i < count; i++ ) {
-		page					= json.nav[i];
+		page					= json.pages[i];
 
 		if ( page[ param ] === value ) {
 			break;
