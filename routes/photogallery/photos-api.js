@@ -30,17 +30,16 @@ var searchByParamater		= function( data, param, value ) {
 };
 
 //------------------------------------------------------------------------------
+// @function		getPhotoByID
+// @description		Returns the json document for a single photo.
+//------------------------------------------------------------------------------
 var getPhotoByID			= function( file, req, res, next ) {
-
-	// this method of getting the json data list is a demo only solution.
-	// normally this data would come from a database.
 	fs.readFile( './public/json/' + file, 'utf8', function( error, data ) {
-
-		if ( error ) 		{ throw 'Can\'t find ' + file + ' in /public/json/'; }
-
-		res.writeHead( 200, { 'content-type': 'application/json' });
-		res.write( searchByParamater( data, 'id', req.params.id ));
-		res.end();
+		if ( error ) {
+			throw 'Can not find /public/json/' + file;
+		} else {
+			res.json( JSON.parse( searchByParamater( data, 'id', req.params.id )));
+		}
 	});
 };
 
@@ -49,17 +48,12 @@ var getPhotoByID			= function( file, req, res, next ) {
 // @description		Returns a list of photos.
 //------------------------------------------------------------------------------
 router.get( '/', function( req, res, next ) {
-
-	// this method of getting the json data list is a demo only solution.
-	// normally this data would come from a database.
-	fs.readFile( './public/json/photos.json', 'utf8', function( error, data ) {
-
-		if ( error ) 		{ throw 'Can\'t to find photos.json in /public/json/'; }
-
-		res.writeHead( 200, { 'content-type': 'application/json' });
-		res.write( data );
-		res.end();
-
+	fs.readFile( './public/json/' + photosFile, 'utf8', function( error, data ) {
+		if ( error ) {
+			throw 'Can not find /public/json/' + photosFile;
+		} else {
+			res.json( JSON.parse( data ));
+		}
 	});
 });
 
