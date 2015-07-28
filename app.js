@@ -17,7 +17,6 @@ var sandboxInfo 			= require( './routes/sandbox/sandbox-info' );				// page
 var sandboxDemos 			= require( './routes/sandbox/sandbox-demos' );				// page
 var sandboxJournal			= require( './routes/sandbox/sandbox-journal' );			// page
 var jarekpredki 			= require( './routes/jarekpredki/jarekpredki' );			// page
-var jarekpredkiBasics		= require( './routes/jarekpredki/jarekpredki-basics' );		// page
 var jarekpredkiLFW			= require( './routes/jarekpredki/jarekpredki-lfw' );		// page
 var jarekpredkiSkills		= require( './routes/jarekpredki/jarekpredki-skills' );		// page
 var jarekpredkiEducation	= require( './routes/jarekpredki/jarekpredki-education' );	// page
@@ -62,7 +61,6 @@ app.use( '/journal', 						sandboxJournal );			// journal page
 app.use( '/photogallery1', 					photoGallery1 );			// photo gallery 1 page
 app.use( '/photogallery2', 					photoGallery2 );			// photo gallery 2 page
 app.use( '/jarekpredki', 					jarekpredki );				// resume landing page
-//app.use( '/jarekpredki/basics', 			jarekpredkiBasics );		// basics page (moved to landing page)
 app.use( '/jarekpredki/lookingforwork',		jarekpredkiLFW );			// lfw page
 app.use( '/jarekpredki/skills', 			jarekpredkiSkills );		// skills page
 app.use( '/jarekpredki/education', 			jarekpredkiEducation );		// education page

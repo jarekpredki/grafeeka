@@ -6,6 +6,11 @@
 var express 				= require( 'express' );
 var router 					= express.Router();
 
+//------------------------------------------------------------------------------
+// @route			GET /:file
+// @info			Returns specific files exactly as they are. Simple text files
+//					and so on that shouldn't render with the view templates.
+//------------------------------------------------------------------------------
 router.get( '/:file', function( req, res, next ) {
 	var fileRequest = req.params.file;
 	var fileExtension = fileRequest.substring( fileRequest.lastIndexOf( '.' ) + 1 );

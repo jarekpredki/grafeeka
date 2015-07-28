@@ -6,9 +6,12 @@
 var express 				= require( 'express' );
 var fs 						= require( 'fs' );
 var router 					= express.Router();
-
+// data files
 var sandboxFile				= 'sandbox-demos.json';
 
+//------------------------------------------------------------------------------
+// @route			GET /
+//------------------------------------------------------------------------------
 router.get( '/', function( req, res, next ) {
 	// read sandboxFile and return its json data
 	fs.readFile( './public/json/' + sandboxFile, 'utf8', function( error, data ) {

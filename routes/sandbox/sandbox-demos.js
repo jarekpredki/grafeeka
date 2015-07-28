@@ -6,13 +6,15 @@
 var express 				= require( 'express' );
 var router 					= express.Router();
 
+//------------------------------------------------------------------------------
+// @route			GET /
+//------------------------------------------------------------------------------
 router.get( '/', function( req, res, next ) {
-
+	// render the page
 	res.render( 'sandbox/sandbox-demos', {
 		title: 'Demos',
 		subtitle: 'Apps, Prototypes, Subsites, API\'s'
 	});
-
 });
 
 module.exports 				= router;

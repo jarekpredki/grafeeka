@@ -6,8 +6,11 @@
 var express 				= require( 'express' );
 var router 					= express.Router();
 
+//------------------------------------------------------------------------------
+// @route			GET /
+//------------------------------------------------------------------------------
 router.get( '/', function( req, res, next ) {
-
+	// render the page
 	res.render( 'jarekpredki/jarekpredki-basics', {
 		title: 'The Basics',
 		subtitle: 'Who? What? Where?'

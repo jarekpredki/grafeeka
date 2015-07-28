@@ -9,7 +9,7 @@ var express 				= require( 'express' );
 var fs 						= require( 'fs' );
 var request 				= require( 'request' );
 var router 					= express.Router();
-
+// data files
 var galleriesFile			= 'nbc-galleries.json';
 
 //------------------------------------------------------------------------------
